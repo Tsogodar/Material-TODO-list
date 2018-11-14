@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="title"><h1>TODO</h1></div>
+  <div class="search">
+    <mat-form-field appearance="outline">
+      <mat-label>Szukaj</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <button mat-flat-button color="primary">Dodaj</button>
+  </div>
+  <div class="list">
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let todo of todos" cdkDrag>
+        <span class="todo" (click)="details(todo)"> {{ todo.title }} </span>
+      </div>
+    </div>
+  </div>
+</div>
